@@ -2,6 +2,7 @@ import os
 import emoji
 import time
 import urllib2
+import pyspeedtest
 
 agent = {'User-Agent':"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30)"}
 
@@ -94,3 +95,10 @@ def Crea_tastiera(N_t):
 def Verifica_Posizione(user):
     if len(user['Posizione']) == 0:
         return 0
+
+def speed_test():
+	st = pyspeedtest.SpeedTest()
+	ping = str(st.ping())[:6]
+	down = pyspeedtest.pretty_speed(st.download())
+	up = pyspeedtest.pretty_speed(st.upload())
+	return ping , down , up

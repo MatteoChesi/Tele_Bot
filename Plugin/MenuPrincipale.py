@@ -3,6 +3,7 @@ import emoji
 import time
 import psutil
 
+import Func as F
 import Menu as M
 
 def MenuPrincipale(user,text,bot,js):
@@ -21,6 +22,10 @@ def MenuPrincipale(user,text,bot,js):
 		IP_PUB = subprocess.check_output(['curl ident.me'],shell=True)
 		IP_LAN = psutil.net_if_addrs()['eth0'][0][1]
 		bot.sendMessage(chat_id, emoji.emojize(":globe_with_meridians:", use_aliases=True) + ' IP Pubblico : \n' + IP_PUB + '\n' + emoji.emojize(":computer:", use_aliases=True) + ' IP Locale : \n' + IP_LAN) 
+		bot.sendMessage(chat_id,'Speed test in corso ...')
+		bot.sendChatAction(chat_id,'typing')
+		P , D, U = F.speed_test()
+		bot.sendMessage(chat_id,'Ping: '+P +' ms\n'+'Download: '+D+'\nUpload: '+U)
 
 	elif (text == '/send'):
 		user['MenuPrincipale'] = 0
