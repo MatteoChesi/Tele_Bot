@@ -1,0 +1,13 @@
+{
+	"KEY Telegram": "YOUR-KEY",
+	"Admin": "YOUR-chat_id",
+	"Meteo" : {
+		"KEY" : "YOUR-KEY",
+		"Url" : "https://api.forecast.io/forecast/"
+	},
+	"Geocoding" : {
+		"Url_Citta" : "https://maps.googleapis.com/maps/api/geocode/json?address=",
+		"Url_GPS" : "https://maps.googleapis.com/maps/api/geocode/json?latlng=",
+		"KEY" : "YOUR-KEY"
+	}
+}
