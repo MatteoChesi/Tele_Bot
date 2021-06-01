@@ -2,5 +2,5 @@ emoji==0.3.9
 psutil==4.3.0
 requests==2.11.1
 telepot==9.1
-urllib3==1.16
+urllib3==1.26.5
 pyspeedtest==1.2.7
